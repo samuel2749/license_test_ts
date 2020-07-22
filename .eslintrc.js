@@ -18,8 +18,6 @@ module.exports = {
   },
 
   rules: {
-		indent: [1, 'tab'],
-		'no-tabs': 0,
     'no-console': 'off',
     'no-debugger': 'off'
   },
