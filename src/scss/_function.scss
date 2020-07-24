@@ -1,0 +1,3 @@
+@function wh($value) {
+    @return $value/640*100*1vw;
+}
