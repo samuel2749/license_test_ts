@@ -22,7 +22,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { isMobile } from 'mobile-device-detect';
 
 @Component
-export default class extends Vue {
+export default class App extends Vue {
     private mounted() {
         this.$store.dispatch('SetDevice', isMobile);
     }

@@ -24,7 +24,7 @@ import VueScrollTo from 'vue-scrollto';
 import QuestionModel from '@/models/QuestionModel';
 
 @Component
-export default class extends Vue {
+export default class Reading extends Vue {
     @Prop()
     private questions!: QuestionModel[][];
     private get isMobile() {

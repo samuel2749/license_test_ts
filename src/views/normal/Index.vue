@@ -54,7 +54,7 @@ import QuestionModel from '@/models/QuestionModel';
         Reading
     }
 })
-export default class extends Vue {
+export default class Normal extends Vue {
     private title = '';
     private list: QuestionModel[] = [];
     private testQuestions: QuestionModel[] = [];

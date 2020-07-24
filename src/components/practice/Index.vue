@@ -53,7 +53,7 @@ import QuestionModel from '@/models/QuestionModel';
 import ReviewQuestionModel from '@/models/ReviewQuestionModel';
 
 @Component
-export default class extends Vue {
+export default class Practice extends Vue {
     @Prop()
     private questions!: QuestionModel[][];
     @Prop() private total!: number;

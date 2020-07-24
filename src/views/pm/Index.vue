@@ -50,7 +50,7 @@ import QuestionModel from '@/models/QuestionModel';
         Reading
     }
 })
-export default class extends Vue {
+export default class PM extends Vue {
     private pmData: QuestionModel[][] = [[]];
     private questions: number[] = [];
     private testQuestions: QuestionModel[] = [];
