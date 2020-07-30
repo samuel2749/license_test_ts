@@ -47,7 +47,8 @@ import Practice from '@/components/practice/Index.vue';
 import Reading from '@/components/reading/Index.vue';
 import QuestionBank from '@/constants/QuestionBank';
 import QuestionModel from '@/models/QuestionModel';
-
+import { State, namespace } from 'vuex-class';
+const someModule = namespace('test');
 @Component({
     components: {
         Practice,
@@ -65,10 +66,15 @@ export default class Normal extends Vue {
     private modeType = 'test';
     private qNum = 50;
     private total = 0;
+    private test!: Function;
     @Watch('$route', { immediate: true, deep: true })
     onRouteChange() {
         this.checkTestType();
     }
+    @State('name') name!: string;
+    @someModule.State('menulist') menulist!: [];
+    @someModule.Action('saveMenuListFN') saveMenuListFN!: Function;
+    @someModule.Action('setName') setName!: Function;
     private get isMobile(): boolean {
         return this.$store.state.isMobile;
     }
@@ -97,6 +103,11 @@ export default class Normal extends Vue {
     private onAllTest() {
         this.startNum = 1;
         this.endNum = this.list.length;
+        this.saveMenuListFN(['123', 456]);
+        console.log(this.menulist);
+        console.log(this.name);
+        this.setName('samuel');
+        console.log(this.name);
     }
     private onTest() {
         let qTotal = 0;
