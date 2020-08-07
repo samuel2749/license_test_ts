@@ -1,15 +1,22 @@
 <template lang="pug">
     .practice.container(v-if="isStart")
         .row
-            .text-primary(:class="titleFontSize") {{`Q${qNum}:`}}
-                span.p-2(v-if="!isQuestion" :class="{'text-success': isCorrect, 'text-danger': !isCorrect}") ({{isCorrect? '答對': '答錯'}})
-        .row
-            .text-primary(:class="titleFontSize") {{nowQuestion.question}}
-        .text-center(v-if="nowQuestion.img")
-            img(:src="`./images/${nowQuestion.img}`" class="img-fluid")
-        .row
             .col-12.custom-control(v-for="(item, index) in nowQuestion.option" :key="`option${index}`" :class="optionClass")
-                input.custom-control-input(:type="isRadio? 'radio': 'checkbox'" :name="isRadio? 'radio': false" :id="`answer${index}`" :value="String(index + 1)" v-model="isRadio? answer: answers" :disabled="!isQuestion")
+                input.custom-control-input(
+                    v-if="isRadio"
+                    type="radio" 
+                    name="radio"
+                    :id="`answer${index}`" 
+                    :value="String(index + 1)" 
+                    v-model="answer" 
+                    :disabled="!isQuestion")
+                input.custom-control-input(
+                    v-else
+                    type="checkbox"
+                    :id="`answer${index}`" 
+                    :value="String(index + 1)" 
+                    v-model="answers" 
+                    :disabled="!isQuestion")
                 label.custom-control-label.p-1.custom-style-label(:for="`answer${index}`" :class="getOptionOtherClass(String(index + 1))")
                     span(v-html="item")
                 .clearfix

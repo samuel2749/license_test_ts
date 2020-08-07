@@ -12,10 +12,13 @@
   "dependencies": {
     "@types/lodash": "^4.14.158",
     "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
     "mobile-device-detect": "^0.4.3",
+    "swiper": "^6.1.1",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",

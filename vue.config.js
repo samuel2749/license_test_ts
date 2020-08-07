@@ -1,1 +1,3 @@
-module.exports = {}
+module.exports = {
+    transpileDependencies: [/node_modules[/\\\\](swiper|)[/\\\\]/]
+};

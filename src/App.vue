@@ -13,6 +13,8 @@
         router-link.nav-link(to="/normal/erp" :class="{active: $route.params.type === 'erp'}") ERP 考題
       li.nav-item
         router-link.nav-link(to="/pm" :class="{active: $route.name === 'pm'}") 專案管理 考題
+      li.nav-item
+        router-link.nav-link(to="/swiper-test" :class="{active: $route.name === 'swiper-test'}") Swiper
     router-view
     .row
       .col-12.pt-5.pb-3.text-center Copyright 1.0.3 By Samuel 2020-5-18
